@@ -15,6 +15,7 @@ import { useProductsContext } from './products_context'
 const initialState = {
   filtered_products: [],
   all_products: [],
+  grid_view: true,
 }
 
 const FilterContext = React.createContext()
@@ -26,7 +27,7 @@ export const FilterProvider = ({ children }) => {
   }, [products])
   const [state, dispatch] = useReducer(reducer, initialState)
   return (
-    <FilterContext.Provider value='filter context'>
+    <FilterContext.Provider value={{ ...state }}>
       {children}
     </FilterContext.Provider>
   )
