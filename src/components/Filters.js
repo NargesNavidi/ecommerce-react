@@ -144,6 +144,9 @@ const Filters = () => {
           </div>
           {/* end of shipping */}
         </form>
+        <button className='clear-btn' type='button' onClick={clearFilters}>
+          clear filter
+        </button>
       </div>
     </Wrapper>
   )
