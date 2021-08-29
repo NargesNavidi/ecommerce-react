@@ -1,4 +1,3 @@
-import { act } from '@testing-library/react'
 import {
   ADD_TO_CART,
   CLEAR_CART,
@@ -62,9 +61,8 @@ const cart_reducer = (state, action) => {
           }
           return { ...item, amount: newAmount }
         }
-      } else {
-        return item
       }
+      return item
     })
 
     return { ...state, cart: tempCart }
